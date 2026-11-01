@@ -1,0 +1,22 @@
+[build]
+  publish = "."
+
+# download sempre da ultima versao no GitHub Releases
+[[redirects]]
+  from = "/baixar"
+  to = "https://github.com/FyeVisuals/fye-turbo/releases/latest/download/FyeTurbo-Setup.exe"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/downloads/*"
+  to = "https://github.com/FyeVisuals/fye-turbo/releases/latest/download/FyeTurbo-Setup.exe"
+  status = 302
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
